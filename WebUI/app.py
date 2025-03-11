@@ -14,7 +14,7 @@ GCS_BUCKET_NAME = os.getenv('GCS_BUCKET_NAME')
 GCS_PROJECT_ID = os.getenv('GCS_PROJECT_ID')
 
 # Initialize the GCS client with project ID
-storage_client = storage.Client()
+storage_client = storage.Client(project=GCS_PROJECT_ID)
 bucket = storage_client.bucket(GCS_BUCKET_NAME)
 
 @app.route('/')
